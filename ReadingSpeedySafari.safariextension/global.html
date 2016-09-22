@@ -1,0 +1,47 @@
+<!-- <!DOCTYPE html>
+<html>
+<title>Fancy</title>
+<script>
+	// Watch the extension for a trigger
+	safari.application.addEventListener("command", performCommand, false);
+
+	// Do something when triggered
+	function performCommand(event) {
+	    // Pass that command we created before to this script
+	    if (event.command == "FancyIt") {
+		    var myurl = safari.application.activeBrowserWindow.activeTab.url; // Set current tab URL
+		    var mytitle = safari.application.activeBrowserWindow.activeTab.title; // Set current tab title
+	        var newTab = safari.application.activeBrowserWindow.openTab(); // Open a new tab
+	        newTab.url = ('http://fancy.com/fancyit?ItemURL=' + encodeURIComponent(myurl) + '&Title=' + encodeURIComponent(mytitle)); // Set up share url
+	    }
+	}
+</script>
+</html> -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>ReadingSpeedy</title>
+  <meta name="generator" content="myHTMLEdit | helloworld.com" />
+  <script type="text/javascript" charset="utf-8">
+
+  function performCommand(event) {
+    if (event.command === "doTheHello") {
+			var body = document.getElementsByTagName("Body")[0];
+			alert("hello");
+      alert(body.innerText);
+    }
+  }
+
+  function validateCommand(event) {
+    if (event.command === "doTheHello") {
+      event.target.disabled = !event.target.browserWindow.activeTab.url;
+    }
+  }
+}
+  safari.application.addEventListener("command", performCommand, true);
+  safari.application.addEventListener("validate", validateCommand, true);
+  </script>
+</head>
+<body>
+</body>
+</html>
