@@ -26,9 +26,7 @@
 
   function performCommand(event) {
     if (event.command === "doTheHello") {
-			var body = document.getElementsByTagName("Body")[0];
 			alert("hello");
-      alert(body.innerText);
     }
   }
 
@@ -37,7 +35,6 @@
       event.target.disabled = !event.target.browserWindow.activeTab.url;
     }
   }
-}
   safari.application.addEventListener("command", performCommand, true);
   safari.application.addEventListener("validate", validateCommand, true);
   </script>
